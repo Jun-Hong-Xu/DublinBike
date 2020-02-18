@@ -89,6 +89,18 @@ class Mysql(object):
         except Exception as error:
             print('[{}] insert failed:{}'.format(sql, str(error)))
             return False
+    
+    def executemany(self, sql, para):
+        try:
+            self.reconnect()
+            cur = self._conn.cursor()
+            rowcount = cur.executemany(sql, para)
+            self._conn.commit()
+            cur.close()
+            return rowcount
+        except Exception as error:
+            print(error)
+            return 0
 
     def query(self, sql, para=None, cursor=None):
         try:
