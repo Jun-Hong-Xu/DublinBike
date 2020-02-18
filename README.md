@@ -13,7 +13,7 @@ a web app to show Dublin bike info
 
 [pylib](src/pylib): Common components used during developing.
 
-[Develop Log](src/DevLog)
+[Develop Log](DevLog/README.md)
 
 
 ## AUTHOR
