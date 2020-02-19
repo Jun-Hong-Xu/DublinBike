@@ -13,7 +13,7 @@ CREATE TABLE `station` (
   `ava_bikes` int(11) DEFAULT NULL COMMENT 'available bikes',
   `ava_stands` int(11) DEFAULT NULL COMMENT 'available stands',
   `status` ENUM('OPEN','CLOSED') DEFAULT 'OPEN',
-  `update` timestamp DEFAULT NULL COMMENT 'data update time in API',
+  `update_time` int(10) DEFAULT NULL COMMENT 'data update time in API',
   /*`modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last modify time',*/
   PRIMARY KEY (`sid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6000000 DEFAULT CHARSET=utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `station_weather` (
   `rain_3h` float(5,2) DEFAULT NULL COMMENT 'rain volume for the last 3 hour, mm',
   `snow_1h` float(5,2) DEFAULT NULL COMMENT 'snow volume for the last 1 hour, mm',
   `snow_3h` float(5,2) DEFAULT NULL COMMENT 'snow volume for the last 3 hour, mm',
-  `update_time`timestamp DEFAULT NULL COMMENT 'data update time in API',
+  `update_time` int(10) DEFAULT NULL COMMENT 'data update time in API',
   `sid` int(10) DEFAULT NULL COMMENT 'foreign key of table station, unique',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
