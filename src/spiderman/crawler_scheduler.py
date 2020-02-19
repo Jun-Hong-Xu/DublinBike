@@ -1,5 +1,5 @@
 import datetime
-from apscheduler.schedulers.background import BlockingScheduler
+from apscheduler.schedulers.background import BackgroundScheduler
 import crawler_insert_table
 
 
@@ -19,7 +19,7 @@ if __name__ == '__main__':
     end = input("Enter the end time: ")
 
     # Create the instance of schedulers
-    scheduler = BlockingScheduler()
+    scheduler = BackgroundScheduler()
 
     # Set the trigger to interval, and interval is 300 second (5 minutes)
     # start_date = "2020-2-19 20:43:20"
