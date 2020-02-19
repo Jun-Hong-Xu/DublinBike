@@ -39,8 +39,7 @@ CREATE TABLE `station_weather` (
   `snow_1h` float(5,2) DEFAULT NULL COMMENT 'snow volume for the last 1 hour, mm',
   `snow_3h` float(5,2) DEFAULT NULL COMMENT 'snow volume for the last 3 hour, mm',
   `update_time`timestamp DEFAULT NULL COMMENT 'data update time in API',
-  `sid` int(10) DEAFAULT NULL COMMENT 'foreign key of table station, unique'
-  
+  `sid` int(10) DEFAULT NULL COMMENT 'foreign key of table station, unique',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;
 
