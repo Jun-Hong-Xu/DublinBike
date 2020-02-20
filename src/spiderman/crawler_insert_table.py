@@ -53,7 +53,7 @@ def insert_data2weather(lat, lon, sid, station_id, api_key_ow):
         raise Exception("Bad connection.")
 
 
-if __name__ == "__main__":
+def main():
     # Get the sql query
     query_insert_station = "INSERT INTO station (sid, station_id, station_name, station_address, lat, lng, bike_stands," \
                            "ava_bikes,ava_stands,status,update_time) " \
@@ -82,7 +82,6 @@ if __name__ == "__main__":
 
     # Get the return data from db query
     sid_return = db.query(sid_query)
-    print(sid_return)
     station_weather_renew_row = 0
     for sid_dict in sid_return:
         # Get the parameter to generate table station_weather

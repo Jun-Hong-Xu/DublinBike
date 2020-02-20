@@ -6,10 +6,11 @@ import crawler_insert_table
 def timed_task():
     crawler_insert_table.main()
     f = open("crawler_log.txt", 'a')
+    f.write("Scrapped at ")
     f.write(datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S.%f")[:-7])
     f.write("\n")
-    f.write("Table station has updated with: %i rows. \n" %crawler_insert_table.station_renew_row)
-    f.write("Table station_weather has updated with: %i rows. \n" %crawler_insert_table.station_weather_renew_row)
+    # f.write("Table station has updated with: %i rows. \n" %crawler_insert_table.main.station_renew_row)
+    # f.write("Table station_weather has updated with: %i rows. \n" %crawler_insert_table.main.station_weather_renew_row)
     f.close()
     print("Test info: output at", datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S.%f")[:-7])
 

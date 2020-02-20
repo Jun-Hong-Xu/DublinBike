@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import time
-import pymysql.cursors
-
+import pymysql
 
 
 class Mysql(object):
@@ -89,7 +88,7 @@ class Mysql(object):
         except Exception as error:
             print('[{}] insert failed:{}'.format(sql, str(error)))
             return False
-    
+
     def executemany(self, sql, para):
         try:
             self.reconnect()
@@ -117,7 +116,7 @@ class Mysql(object):
         except Exception as error:
             print('[{}] query failed:{}'.format(sql, str(error)))
             return False
-    
+
     def query_one(self, sql, para=None, cursor=None):
         r = self.query(sql, para, cursor)
         if r:
