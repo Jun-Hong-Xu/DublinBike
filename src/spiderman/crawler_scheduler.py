@@ -4,7 +4,7 @@ import crawler_insert_table
 
 
 def timed_task():
-    crawler_insert_table.main()
+    # crawler_insert_table.main()
     f = open("crawler_log.txt", 'a')
     f.write(datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S.%f")[:-7])
     f.write("\n")
